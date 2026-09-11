@@ -21,15 +21,19 @@ function App() {
         <button type='submit'>ADD</button>
       </form>
 
-      <p>TO DO LIST</p>
+      <p>TO DO LIST ({todolist.length} tasks)</p>
 
-      <ul className="todo-list">
-        {todolist.map((tolist, index) => (
-          <li key={index} className="todo-item">
-            <span className="todo-text">{index + 1}. {tolist}</span>
-          </li>
-        ))}
-      </ul>
+      {todolist.length === 0 ? (
+        <p className="empty">No tasks yet — add your first one above!</p>
+      ) : (
+        <ul className="todo-list">
+          {todolist.map((tolist, index) => (
+            <li key={index} className="todo-item">
+              <span className="todo-text">{index + 1}. {tolist}</span>
+            </li>
+          ))}
+        </ul>
+      )}
 
 
 
