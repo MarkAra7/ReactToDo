@@ -5,16 +5,18 @@ import './App.css'
 
 
 function App() {
-   const [todolist, setTodolist] = useState([]);
-   const [x, setX] = useState('');
+  const [todolist, setTodolist] = useState([]);
+  const [x, setX] = useState('');
+  let [id, setID] = useState(1);
 
   return (
     <>
       <h1>TO DO APP</h1>
       <form onSubmit={(e) => {
         e.preventDefault()
-        setTodolist([...todolist, x])
-        setX('')
+        setID(id + 1)
+        setTodolist([...todolist, { id: id, task: x }]);
+        setX('');
       }}>
         <label htmlFor="task">Input Your Tasks</label><br></br>
         <input id="task" name='task' type='task' value={x} onChange={e => setX(e.target.value)}></input>
@@ -27,9 +29,12 @@ function App() {
         <p className="empty">No tasks yet — add your first one above!</p>
       ) : (
         <ul className="todo-list">
-          {todolist.map((tolist, index) => (
-            <li key={index} className="todo-item">
-              <span className="todo-text">{index + 1}. {tolist}</span>
+          {todolist.map(tolist => (
+            <li key={tolist.id} className="todo-item">
+              <span className="todo-text">{tolist.task}</span>
+              <button id={tolist.id} className="delete-btn" onClick={() => {
+                setTodolist(todolist.filter((item) => item.id !== tolist.id));
+              }}>Delete</button>
             </li>
           ))}
         </ul>
