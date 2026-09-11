@@ -23,8 +23,12 @@ function App() {
 
       <p>TO DO LIST</p>
 
-      <ul>
-        {todolist.map((tolist) => <li>{tolist}</li>)}
+      <ul className="todo-list">
+        {todolist.map((tolist, index) => (
+          <li key={index} className="todo-item">
+            <span className="todo-text">{index + 1}. {tolist}</span>
+          </li>
+        ))}
       </ul>
 
 
