@@ -40,6 +40,10 @@ function App() {
         </ul>
       )}
 
+      {todolist.length > 0 && (
+        <button onClick={() => setTodolist([])}>Clear All</button>
+      )}
+
 
 
     </>
