@@ -1,13 +1,16 @@
 import { useState } from 'react'
-import { useEffect } from 'react';
 
 import './App.css'
 
+interface Todo {
+  id: number;
+  task: string;
+}
 
 function App() {
-  const [todolist, setTodolist] = useState([]);
+  const [todolist, setTodolist] = useState<Todo[]>([]);
   const [x, setX] = useState('');
-  let [id, setID] = useState(1);
+  const [id, setID] = useState(1);
 
   return (
     <>
@@ -32,7 +35,7 @@ function App() {
           {todolist.map(tolist => (
             <li key={tolist.id} className="todo-item">
               <span className="todo-text">{tolist.task}</span>
-              <button id={tolist.id} className="delete-btn" onClick={() => {
+              <button id={String(tolist.id)} className="delete-btn" onClick={() => {
                 setTodolist(todolist.filter((item) => item.id !== tolist.id));
               }}>Delete</button>
             </li>
