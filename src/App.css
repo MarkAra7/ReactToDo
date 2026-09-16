@@ -35,7 +35,16 @@ label {
   color: var(--text-h);
 }
 
-input {
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+input,
+textarea {
   padding: 8px 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -43,6 +52,13 @@ input {
   background: var(--bg);
   color: var(--text-h);
   margin-right: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
 }
 
 button {
