@@ -15,7 +15,8 @@ export function TodoForm({ onAddTask }: TodoFormProps) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="task">Input Your Tasks</label><br />
+      <label htmlFor="task">Input Your Tasks</label>
+      <br />
       <input
         id="task"
         name="task"

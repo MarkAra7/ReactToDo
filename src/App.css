@@ -61,7 +61,12 @@
   border: 1px solid var(--border);
   background: var(--bg);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: color 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.15s;
 }
 
 .nav-link:hover {
@@ -78,7 +83,11 @@
 
 .nav-link.active {
   color: #fff;
-  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #ff7a59));
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 70%, #ff7a59)
+  );
   border-color: transparent;
   box-shadow: 0 4px 14px var(--accent-border);
 }
@@ -192,5 +201,7 @@ button:hover {
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -12,10 +12,7 @@ export function TodoItem({ todo, onDelete }: TodoItemProps) {
   return (
     <li className="todo-item">
       <span className="todo-text">{todo.task}</span>
-      <button
-        className="delete-btn"
-        onClick={() => onDelete(todo.id)}
-      >
+      <button className="delete-btn" onClick={() => onDelete(todo.id)}>
         Delete
       </button>
     </li>
